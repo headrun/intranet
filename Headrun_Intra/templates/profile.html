@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}
+<title>Profile | Intra.Headrun.Com</title>
+{% endblock %}
+
+{% block middlecontent %}
+    <div id="page-wrapper">
+        <h3>Profile Info</h3>
+        <div class='row profile'>
+            <div class='col-xs-12 col-sm-6 col-md-3'>
+		<div class='image'>
+		    <a href='#' class='thumbnail'>
+		        <img src='{{UserProfile.image}}'>
+		    </a>
+		</div>
+            </div>
+            <div class='col-xs-12 col-sm-6 col-md-9'>
+		<div class='userdetails'>
+		   <dl class='dl-horizontal'> 
+			<dt>Name:</dt>
+			<dd>{{user.username}}</dd>
+			<dt>Age:</dt>
+			<dd>{{UserProfile.age}}</dd>
+			<dt>Email:</dt>
+			<dd>{{UserProfile.personal_mailid}}</dd>
+			<dt>Phone Number:</dt>
+			<dd>{{UserProfile.phnum}}</dd>
+			<dt>DOB:</dt>
+			<dd>{{UserProfile.dob}}</dd>
+			<dt>DOJ:</dt>
+			<dd>{{UserProfile.doj}}</dd>
+			<dt>Present Address:</dt>
+			<dd>{{UserProfile.presentaddress}}</dd>
+			<dt>Permanent Address:</dt>
+			<dd>{{UserProfile.permanentaddress}}</dd>
+
+		   </dl>
+		</div>
+	    </div>
+	    <div class='clear-fix'></div>
+        </div>
+        <div class='row'><p>Note*: If you want to update please contact to your Administrator</p></div>
+    </div>
+{% endblock %}
+

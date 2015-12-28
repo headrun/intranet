@@ -1,0 +1,15 @@
+div.policies div.panel-body{
+  line-height: 1.8em;
+  font-family: serif;
+  font-size: 15px;
+}
+.profile_img .user-name p{
+  font-size: 20px;
+  min-width: 60px;
+  margin-right: 10px;
+}
+
+div.profile .image img{
+  height : 100%;
+  width  : 100%;
+}
