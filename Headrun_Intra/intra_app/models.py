@@ -4,6 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.conf import settings
+from django.db.models.signals import post_save
 import os
 
 BASE_DIR = getattr(settings, "BASE_DIR", None)
@@ -25,4 +26,8 @@ class UserProfile(models.Model):
     def __unicode__(self):
         return "Name: %s, Age: %s, Email: %s, DOB: %s" % (self.user.username, self.age, self.personal_mailid, self.dob)
 
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        profile, created = UserProfile.objects.get_or_create(user=instance)
 
+post_save.connect(create_user_profile, sender=User)
